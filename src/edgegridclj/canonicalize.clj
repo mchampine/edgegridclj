@@ -12,7 +12,7 @@
 (def headers-to-use [])  ;; or e.g (def headers-to-use ["host" "accept-encoding"])
 
 (defn canonicalizeUri
-  "Require URIs to beging with a forward slash"
+  "Require URIs to begin with a forward slash"
   [s]
   (if (= \/ (first s)) s (str "/" s)))
 
