@@ -42,6 +42,6 @@
   (str (.toUpperCase (.getRequestMethod request)) \tab
        (.toLowerCase (.getScheme (.toURI (.getUrl request)))) \tab
        (.getFirstHeaderStringValue (.getHeaders request) "host") \tab
-       (canonicalizeUri (.buildRelativeUrl (.getUrl request))) \tab
+       (canonicalizeUri (.buildRelativeUrl (.getUrl request))) \tab\tab
        (apply str (map (partial canonicalizeHeader request) headers-to-use))
        (getContentHash request) \tab))

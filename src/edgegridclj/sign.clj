@@ -56,7 +56,7 @@
                                          timestamp)
         signingKey    (aka-open-inner-sign timestamp (:clientSecret cred) HMAC_ALG)
         requestResult (aka-open-canonicalize request) ;; TBD handle non-retryable case
-        stringToSign  (str authData requestResult)
+        stringToSign  (str requestResult authData)
         signature     (aka-open-inner-sign stringToSign signingKey HMAC_ALG)
         authHeader    (str authData "signature=" signature)
         headers       (.getHeaders request)
